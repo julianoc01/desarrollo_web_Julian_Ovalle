@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="tarea1.css">
+    <title>Registro</title>
+</head>
+
+<body>
+<form>
+    <div>
+        <label for="nombre"> Ingrese su nombre:</label>
+        <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+    </div>
+    <div>
+        <label for="telefono"> Ingrese su numero de telefono:</label>
+        <input id = "telefono" placeholder="12345678">
+    </div>
+    <div>
+        <label for="mail"> Ingrese su mail:</label>
+        <input id="mail" placeholder="ejemplo@correo.com">
+    </div>
+    <div>
+        <label for="region"> Ingrese su región:</label>
+
+        <select id="region" name="region">
+            <option value="">Selecciona una región</option>
+            <option value="arica_parinacota">Arica y Parinacota</option>
+            <option value="tarapaca">Tarapacá</option>
+            <option value="antofagasta">Antofagasta</option>
+            <option value="atacama">Atacama</option>
+            <option value="coquimbo">Coquimbo</option>
+            <option value="valparaiso">Valparaíso</option>
+            <option value="ohiggins">O'Higgins</option>
+            <option value="maule">Maule</option>
+            <option value="nuble">Ñuble</option>
+            <option value="biobio">Biobío</option>
+            <option value="araucania">La Araucanía</option>
+            <option value="los_rios">Los Ríos</option>
+            <option value="los_lagos">Los Lagos</option>
+            <option value="aysen">Aysén</option>
+            <option value="magallanes">Magallanes y de la Antártica Chilena</option>
+            <option value="metropolitana">Región Metropolitana de Santiago</option>
+        </select>
+    </div>
+    <div>
+        <label for="comuna">Ingrese su comuna</label>
+        <input id="comuna" >
+    </div>
+    <div>
+        <label for="contraseña"> Ingrese su contraseña:</label>
+        <input type="password" id="contraseña">
+    </div>
+    <div>
+        <label for="contraseña2"> Verifique su contraseña:</label>
+        <input type="password" id="contraseña2">
+    </div>
+    <div>
+        <button type="button" id="envio"> Registrarse</button>
+    </div>
+
+</form>
+<script src="register.js"></script>
+</body>
+</html>
