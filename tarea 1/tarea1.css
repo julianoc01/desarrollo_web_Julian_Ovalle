@@ -1,0 +1,224 @@
+/* ESTILOS GENERALES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #263238;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+/* TÍTULOS */
+
+h1 {
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* FORMULARIOS */
+
+form {
+    background-color: white;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+/* LABELS */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #37474f;
+}
+
+/* INPUTS Y SELECT */
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #43a047;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.15);
+}
+
+/* Input para subir archivos */
+
+input[type="file"] {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+/* BOTONES */
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* LOGIN */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-container form {
+    margin-top: 25px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #2e7d32;
+    border-radius: 50%;
+
+    font-size: 40px;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+
+
+}
+
+.login-container h1 {
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.login-subtitle {
+    color: #607d8b;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Botón Registrarse */
+
+.secondary-button {
+    background-color: transparent;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+}
+
+.secondary-button:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* PANEL DE AVISTAMIENTOS */
+
+body > div {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Lista de avistamientos */
+
+#listaAvistamientos {
+    display: grid;
+    gap: 20px;
+}
+
+/* Tarjeta de cada avistamiento */
+
+#listaAvistamientos > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+
+    border-left: 5px solid #43a047;
+
+
+}
+
+/* Imágenes de los avistamientos */
+
+#listaAvistamientos img {
+    display: block;
+
+
+    width: 150px !important;
+    height: 150px !important;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+    margin-top: 12px;
+
+
+}
+
+/* Texto dentro de las tarjetas */
+
+#listaAvistamientos p {
+    margin: 8px 0;
+}
+
+
