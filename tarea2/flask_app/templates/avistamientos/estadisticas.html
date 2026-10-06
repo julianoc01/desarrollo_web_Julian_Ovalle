@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tarea1.css') }}">
+    <title>Title</title>
+</head>
+<body>
+<h1> Avistamientos de aves</h1>
+
+{% if usuario  %}
+       <a href="{{ url_for('logout') }}">
+       <button type="button">Volver al inicio</button>
+       </a>
+{% else %}
+<a href="{{ url_for('logout') }}">
+    <button type="button">Cerrar sesión</button>
+</a>
+<a href="{{ url_for('login') }}">
+    <button type="button">Ingresa un avistamiento</button>
+    </a>
+{% endif %}
+<div>
+    <h2>Avistamientos registrados</h2>
+
+    <div id="listaAvistamientos">
+        {% for avis in data %}
+            <article>
+                <h3>{{ avis.ave }}</h3>
+                <p><strong>Registrado por:</strong> {{ avis.autor }}</p>
+                <p><strong>Fecha:</strong> {{ avis.fecha }}</p>
+                <p><strong>Lugar:</strong> {{ avis.lugar }}</p>
+                <p><strong>Comentario:</strong> {{ avis.descripcion }}</p>
+
+                {% for archivo in avis.archivos %}
+                    {% if archivo.es_video %}
+                        <video width="300" controls>
+                            <source src="{{ archivo.url }}">
+                        </video>
+                    {% else %}
+                        <img src="{{ archivo.url }}"
+                             alt="Foto de {{ avis.ave }}"
+                             width="300">
+                    {% endif %}
+
+                    <p>
+                        <a href="{{ archivo.url }}" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </p>
+                {% endfor %}
+
+                <hr>
+            </article>
+        {% else %}
+            <p>Todavía no hay avistamientos registrados.</p>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>
