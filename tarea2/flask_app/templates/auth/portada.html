@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tarea1.css') }}">
+    <title>Unión de Ornitólogos de Chile </title>
+</head>
+<body>
+<h1> Union de Ornitólogos de Chile</h1>
+<h2> Bienvenido a la pagina web de la Union de Ornitólogos de chile, a continuacion puedes registrarte, ingresar un avistamiento o consultar las estadisticas</h2>
+<div>
+    <a href="{{ url_for('register') }}">
+    <button type="button">Registrate</button>
+    </a>
+    <a href="{{ url_for('login') }}">
+    <button type="button">Ingresa un avistamiento</button>
+    </a>
+    <a href="{{ url_for('estadisticas') }}">
+    <button type="button">Revisar registros y estadisticas</button>
+    </a>
+</div>
+<h2> Ultimos dos avistamientos registrados</h2>
+
+    <div id="listaAvistamientos">
+        {% for avis in data[:2] %}
+            <article>
+                <h3>{{ avis.ave }}</h3>
+                <p><strong>Registrado por:</strong> {{ avis.autor }}</p>
+                <p><strong>Fecha:</strong> {{ avis.fecha }}</p>
+                <p><strong>Lugar:</strong> {{ avis.lugar }}</p>
+                <p><strong>Comentario:</strong> {{ avis.descripcion }}</p>
+
+                {% for archivo in avis.archivos %}
+                    {% if archivo.es_video %}
+                        <video width="300" controls>
+                            <source src="{{ archivo.url }}">
+                        </video>
+                    {% else %}
+                        <img src="{{ archivo.url }}"
+                             alt="Foto de {{ avis.ave }}"
+                             width="300">
+                    {% endif %}
+
+                    <p>
+                        <a href="{{ archivo.url }}" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </p>
+                {% endfor %}
+
+                <hr>
+            </article>
+        {% else %}
+            <p>Todavía no hay avistamientos registrados.</p>
+        {% endfor %}
+    </div>
+<!--<script src="login.js"></script>-->
+<!-- <script src="{{ url_for('static', filename='js/login.js') }}"></script>-->
+</body>
+</html>

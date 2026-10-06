@@ -1,1 +1,3 @@
-# desarrollo_web_Julian_Ovalle
+Tarea2
+Para la tarea 2 se trabajo sobre los avances de la tarea1 implementando el framework flask y una base de datos mysql. Con el fin de mantener los formularios de la tarea 1 se modifico el archivo con el modelo sql propuesto para añadir una columna para la contraseña en la tabla voluntario.
+Para poder ejecutar la tarea primero se debe establecer una conexión con mysql, luego se deben ejecutar los archivos sql que están en la carpeta database, después se debe crear un ambiente virtual dentro de la carpeta flask_app , posteriormente se debe activar el ambiente virtual e instalar los módulos del archivo requirements.txt, una vez echo esto se puede ejecutar flask run para ver la tarea.

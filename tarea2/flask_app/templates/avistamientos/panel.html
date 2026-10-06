@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tarea1.css') }}">
+    <title>Title</title>
+</head>
+<body>
+<h1> Avistamientos de aves</h1>
+
+<div>
+    <h2> Anadir avistamiento</h2>
+    <form id="formAvistamiento" action ="{{ url_for('post_avis') }}"  method="post"  enctype="multipart/form-data">
+        <div>
+            <label for="ave"> Ave avistada</label>
+            <input id="ave" name="ave">
+        </div>
+        <div>
+            <label for="fecha"> Fecha del avistamiento</label>
+            <input type="date" id="fecha" name="fecha">
+        </div>
+        <div>
+            <label for="lugar"> Lugar del avistamiento</label>
+            <input id="lugar" name="lugar">
+        </div>
+        <div>
+            <label for="foto"> Foto o video del encuentro</label>
+            <input type="file" id="foto" name="foto">
+        </div>
+        <div>
+            <label for="comentario"> Comentarios sobre el avistamiento</label>
+            <input id="comentario" name="comentario">
+        </div>
+        <div>
+            <button type="submit" id="avistamiento">  Registrar avistamiento</button>
+        </div>
+    </form>
+</div>
+<a href="{{ url_for('logout') }}">
+    <button type="button">Cerrar sesión</button>
+</a>
+<a href="{{ url_for('estadisticas') }}">
+    <button type="button">Revisar registros y estadisticas</button>
+</a>
+<div>
+    <!--<h2>Avistamientos registrados</h2>
+
+    <div id="listaAvistamientos">
+        {% for avis in data %}
+            <article>
+                <h3>{{ avis.ave }}</h3>
+                <p><strong>Registrado por:</strong> {{ avis.autor }}</p>
+                <p><strong>Fecha:</strong> {{ avis.fecha }}</p>
+                <p><strong>Lugar:</strong> {{ avis.lugar }}</p>
+                <p><strong>Comentario:</strong> {{ avis.descripcion }}</p>
+
+                {% for archivo in avis.archivos %}
+                    {% if archivo.es_video %}
+                        <video width="300" controls>
+                            <source src="{{ archivo.url }}">
+                        </video>
+                    {% else %}
+                        <img src="{{ archivo.url }}"
+                             alt="Foto de {{ avis.ave }}"
+                             width="300">
+                    {% endif %}
+
+                    <p>
+                        <a href="{{ archivo.url }}" target="_blank">
+                            Abrir archivo
+                        </a>
+                    </p>
+                {% endfor %}
+
+                <hr>
+            </article>
+        {% else %}
+            <p>Todavía no hay avistamientos registrados.</p>
+        {% endfor %}
+    </div>-->
+</div>
+<!--<script src="panel.js"></script>-->
+<!-- <script src="{{ url_for('static', filename='js/panel.js') }}"></script>-->
+</body>
+</html>

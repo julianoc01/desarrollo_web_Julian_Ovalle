@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tarea1.css') }}">
+    <title>Registro</title>
+</head>
+
+<body>
+<form method="post">
+    <div>
+        <label for="nombre"> Ingrese su nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez">
+    </div>
+    <div>
+        <label for="telefono"> Ingrese su numero de telefono:</label>
+        <input id = "telefono"  name="telefono" placeholder="12345678">
+    </div>
+    <div>
+        <label for="mail"> Ingrese su mail:</label>
+        <input id="mail" name="mail" placeholder="ejemplo@correo.com">
+    </div>
+    <div>
+        <label for="region"> Ingrese su región:</label>
+
+        <select id="region" name="region">
+            <option value="">Selecciona una región</option>
+            <option value="arica_parinacota">Arica y Parinacota</option>
+            <option value="tarapaca">Región de Tarapacá</option>
+            <option value="antofagasta">Región de Antofagasta</option>
+            <option value="atacama">Región de Atacama</option>
+            <option value="coquimbo">Región de Coquimbo </option>
+            <option value="valparaiso">Región de Valparaíso</option>
+            <option value="ohiggins">Región del Libertador Bernardo O'Higgins</option>
+            <option value="maule">Región del Maule</option>
+            <option value="nuble">Región del Ñuble</option>
+            <option value="biobio">Región del Biobío</option>
+            <option value="araucania">Región de La Araucanía</option>
+            <option value="los_rios">Región de Los Ríos</option>
+            <option value="los_lagos">Región de Los Lagos</option>
+            <option value="aysen">'Región Aisén del General Carlos Ibáñez del Campo</option>
+            <option value="magallanes">Región de Magallanes y la Antártica Chilena</option>
+            <option value="metropolitana">Región Metropolitana de Santiago </option>
+        </select>
+    </div>
+    <div>
+        <label for="comuna">Ingrese su comuna</label>
+        <input id="comuna" name="comuna">
+    </div>
+    <div>
+        <label for="contraseña"> Ingrese su contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena">
+    </div>
+    <div>
+        <label for="contraseña2"> Verifique su contraseña:</label>
+        <input type="password" id="contrasena2" name="contrasena2">
+    </div>
+    <div>
+        <button type="submit" id="envio" > Registrarse</button>
+    </div>
+
+</form>
+<!--<script src="register.js"></script>-->
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+</body>
+</html>
