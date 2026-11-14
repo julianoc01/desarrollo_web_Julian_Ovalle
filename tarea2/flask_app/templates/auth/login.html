@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tarea1.css') }}">
+    <title>Unión de Ornitólogos de Chile </title>
+</head>
+<body>
+<h1> Union de Ornitólogos de Chile</h1>
+<h2> Para ingresar un avistamiento debes iniciar sesión, si todavia no tienes una puedes registrarte de manera gratuita</h2>
+<div>
+    <form action = login method="post">
+        <div>
+            <label> Usuario:</label>
+            <input id = "nombre" name="nombre">
+
+        </div>
+        <div>
+            <label> Contraseña:</label>
+            <input id="clave" name="clave">
+        </div>
+
+        <div >
+            <button type="submit" id="ingresar">Ingresar
+
+            </button>
+        </div>
+        <div>
+           <button type="submit" id="registrarse"
+                   formaction="{{ url_for('register') }}"
+                   formmethod="get">Registrarse
+            </button>
+        </div>
+
+    </form>
+</div>
+<script src="login.js"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
