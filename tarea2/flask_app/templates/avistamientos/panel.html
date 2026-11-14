@@ -13,7 +13,9 @@
     <form id="formAvistamiento" action ="{{ url_for('post_avis') }}"  method="post"  enctype="multipart/form-data">
         <div>
             <label for="ave"> Ave avistada</label>
-            <input id="ave" name="ave">
+            <select id="ave" name="ave">
+                 <option value="">Seleccione un ave</option>
+            </select>
         </div>
         <div>
             <label for="fecha"> Fecha del avistamiento</label>
@@ -80,6 +82,6 @@
     </div>-->
 </div>
 <!--<script src="panel.js"></script>-->
-<!-- <script src="{{ url_for('static', filename='js/panel.js') }}"></script>-->
+<script src="{{ url_for('static', filename='js/panel.js') }}"></script>
 </body>
 </html>

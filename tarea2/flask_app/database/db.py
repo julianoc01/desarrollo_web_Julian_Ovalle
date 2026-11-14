@@ -69,6 +69,17 @@ class registro(Base):
     nombre_archivo = Column(String(255), nullable=False)
     avistamiento_id = Column(Integer, ForeignKey("avistamiento.id"), nullable=False)
 
+class comentario(Base):
+    __tablename__ = 'comentario'
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    nombre = Column(String(255), nullable=False)
+    texto = Column(String(255), nullable=False)
+    fecha = Column(DateTime, nullable=False)
+    avistamiento_id = Column(Integer, ForeignKey("avistamiento.id"), nullable=False)
+
+
+
 # funciones db
 def get_user_by_id(id):
     session = SessionLocal()
