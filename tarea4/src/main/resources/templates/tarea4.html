@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/tarea4.css}" />
+    <title>Avistamientos de aves</title>
+</head>
+
+<body>
+
+    <h1>Avistamientos de aves</h1>
+
+    <a th:href="@{/}">
+        <button type="button">Volver al inicio</button>
+    </a>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contenido-principal">
+
+        <!-- FORMULARIO A LA IZQUIERDA -->
+        <div class="formulario-container">
+
+            <h2>Registrar avistamiento</h2>
+
+            <form id="formAvistamiento"
+                  th:action="@{/post-avis}"
+                  method="post">
+
+                <div>
+                    <label for="nombre">Nombre del voluntario</label>
+                    <input id="nombre" name="nombre">
+                </div>
+
+                <div>
+                    <label for="dia">Día del avistamiento</label>
+                    <input type="datetime-local" id="dia" name="dia">
+                </div>
+
+                <div>
+                    <label for="ave">Ave avistada</label>
+                    <input id="ave" name="ave">
+                </div>
+
+                <div>
+                    <label for="comuna">Comuna</label>
+                    <input id="comuna" name="comuna">
+                </div>
+
+                <div>
+                    <button type="submit" id="avistamiento">
+                        Registrar avistamiento
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- AVISTAMIENTOS A LA DERECHA -->
+        <div class="avistamientos-container">
+
+            <div class="avis-search-bar">
+                <input
+                    class="search-input"
+                    id="search-input"
+                    type="text"
+                    placeholder="Buscar avistamientos..."
+                />
+            </div>
+
+            <div id="search-list" hidden></div>
+            <div id="mensaje-error" hidden>  <p> no hay coincidencias</p></div>
+
+            <h2>Avistamientos registrados</h2>
+
+            <div id="listaAvistamientos">
+
+                <div th:each="avis : ${data}">
+                    <div th:replace="~{fragments/avistamiento_box :: avis-box(${avis})}">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script th:src="@{/js/search-bar.js}"></script>
+
+</body>
+</html>

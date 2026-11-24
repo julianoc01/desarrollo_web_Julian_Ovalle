@@ -1,0 +1,361 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #263238;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+h1 {
+    text-align: center;
+    color: #1b5e20;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2e7d32;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1b5e20;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Botón volver al inicio */
+
+body > a {
+    display: block;
+    width: 180px;
+    margin: 0 auto 30px;
+    text-decoration: none;
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+
+.contenido-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   FORMULARIO A LA IZQUIERDA
+======================================== */
+
+.formulario-container {
+    width: 35%;
+    max-width: 450px;
+    flex-shrink: 0;
+}
+
+.formulario-container h2 {
+    margin-bottom: 20px;
+}
+
+#formAvistamiento {
+    background-color: white;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+#formAvistamiento div {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+#formAvistamiento div:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+   LABELS
+======================================== */
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    color: #37474f;
+}
+
+/* ========================================
+   INPUTS Y SELECTORES
+======================================== */
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #cfd8dc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #43a047;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.15);
+}
+
+/* Input para subir archivos */
+
+input[type="file"] {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+/* ========================================
+   AVISTAMIENTOS A LA DERECHA
+======================================== */
+
+.avistamientos-container {
+    flex: 1;
+    min-width: 0;
+}
+
+.avistamientos-container h2 {
+    margin-top: 25px;
+}
+
+/* ========================================
+   BARRA DE BÚSQUEDA
+======================================== */
+
+.avis-search-bar {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #a5d6a7;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.search-input:focus {
+    border-color: #2e7d32;
+}
+
+/* Resultados de búsqueda */
+
+#search-list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+#search-list p {
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#search-list p:hover {
+    background-color: #e8f5e9;
+}
+
+/* ========================================
+   LISTA DE AVISTAMIENTOS
+======================================== */
+
+#listaAvistamientos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Tarjetas de avistamientos */
+
+#listaAvistamientos > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+    border-left: 5px solid #43a047;
+}
+
+/* Imágenes */
+
+#listaAvistamientos img {
+    display: block;
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+/* Texto de las tarjetas */
+
+#listaAvistamientos p {
+    margin: 8px 0;
+}
+
+/* ========================================
+   LOGIN
+======================================== */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.login-container form {
+    margin-top: 25px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    font-size: 40px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.login-container h1 {
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.login-subtitle {
+    color: #607d8b;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Botón registrarse */
+
+.secondary-button {
+    background-color: transparent;
+    color: #2e7d32;
+    border: 2px solid #2e7d32;
+}
+
+.secondary-button:hover {
+    background-color: #2e7d32;
+    color: white;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .contenido-principal {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    .formulario-container {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .avistamientos-container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    #formAvistamiento {
+        padding: 20px;
+    }
+
+    #listaAvistamientos > div {
+        padding: 15px;
+    }
+
+    body > a {
+        width: 100%;
+        max-width: 200px;
+    }
+}
