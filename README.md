@@ -1,3 +1,4 @@
-Tarea2
-Para la tarea 2 se trabajo sobre los avances de la tarea1 implementando el framework flask y una base de datos mysql. Con el fin de mantener los formularios de la tarea 1 se modifico el archivo con el modelo sql propuesto para añadir una columna para la contraseña en la tabla voluntario.
-Para poder ejecutar la tarea primero se debe establecer una conexión con mysql, luego se deben ejecutar los archivos sql que están en la carpeta database, después se debe crear un ambiente virtual dentro de la carpeta flask_app , posteriormente se debe activar el ambiente virtual e instalar los módulos del archivo requirements.txt, una vez echo esto se puede ejecutar flask run para ver la tarea.
+Tarea4
+Para la tarea 4, como se debía ocupar el framework spring boot y el lenguaje java, se optó por implementar un solo archivo html en el cual se pueden ingresar nuevos avistamientos, y buscar dentro de los avistamientos ya realizados según el ave, la comuna o el nombre del voluntario. Además, para simplificar la implementación se crea una nueva tabla avistamientos en la base de datos que ya no pide una foto del ave.
+Para ejecutar la tarea se debe ejecutar el archivo Tarea4Application.java que se encuentra en la carpeta java, la cual esta dentro de main, y esta a su vez se ubica en src, que esta dentro de la carpeta tarea4.
+
